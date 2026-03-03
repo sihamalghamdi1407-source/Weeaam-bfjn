@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoralGuard AI</title>
+<style>
+body { background:#87CEEB; color:white; text-align:center; font-family:Arial; padding:50px;}
+button { padding:10px 20px; font-size:16px; border-radius:10px; border:none; cursor:pointer;}
+h2.safe{color:white;background:#87CEEB;padding:10px;border-radius:8px;}
+h2.warning{color:white;background:#FFFF99;padding:10px;border-radius:8px;}
+h2.danger{color:white;background:#FF6666;padding:10px;border-radius:8px;}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🌊 CoralGuard AI</h1>
+  <p>Smart Coral Protection System</p>
+  <button onclick="analyze()">Analyze Water</button>
+  <h2 id="result">Waiting for Analysis...</h2>
+</div>
+<script>
+function analyze(){
+  let temp=(Math.random()*5+26).toFixed(1);
+  let result=document.getElementById("result");
+  if(temp<28){result.innerText="Temperature: "+temp+"°C - SAFE"; result.className="safe";}
+  else if(temp<30){result.innerText="Temperature: "+temp+"°C - MODERATE RISK"; result.className="warning";}
+  else{result.innerText="Temperature: "+temp+"°C - HIGH BLEACHING RISK"; result.className="danger";}
+}
+</script>
+</body>
+</html>
